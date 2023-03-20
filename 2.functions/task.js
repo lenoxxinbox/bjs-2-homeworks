@@ -18,7 +18,7 @@ function getArrayParams(...arr) {
     
     let avg = parseFloat((sum / arr.length).toFixed(2));
 
-    return { min: min, max: max, avg: avg };
+    return { min, max, avg };
 }
 
 function summElementsWorker(...arr) {
