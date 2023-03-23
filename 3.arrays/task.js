@@ -11,12 +11,14 @@ function compareArrays(arr1, arr2) {
     if ((gender !== "мужской" && gender !== "женский") || (users === [])) {
       return 0;
     } else {
-      return users.filter(user => user.gender === gender).map(user => user.age).reduce((usAge, next, index, genderArr) => {
-        usAge += next;
-        if (index === genderArr.length - 1) {
-          return usAge / genderArr.length;
-        }
-        return usAge;
-      }, 0)
+      return users.filter(user => user.gender === gender)
+          .map(user => user.age)
+          .reduce((usAge, next, index, genderArr) => {
+              usAge += next;
+              if (index === genderArr.length - 1) {
+                  return usAge / genderArr.length;
+              }
+              return usAge;
+          }, 0)
     }
   }
