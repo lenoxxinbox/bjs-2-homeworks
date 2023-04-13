@@ -29,11 +29,16 @@ class AlarmClock {
         if (this.intervalId) {
             return;
         }
-        this.intervalId = setTimeout(() => this.alarmCollection.forEach(alarm => {
+        this.intervalId = setInterval(() => this.alarmCollection.forEach(alarm => {
             if (alarm.time === this.getCurrentFormattedTime()) {
                 alarm.canCall = false;
                 alarm.callback();
             }
         }), 1000);
+    }
+
+    stop() {
+        clearInterval(this.intervalId);
+        this.intervalId = null;
     }
 }
