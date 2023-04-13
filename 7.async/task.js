@@ -24,4 +24,10 @@ class AlarmClock {
         const currentDate = new Date();
         return `${String(currentDate.getHours())}:${String(currentDate.getMinutes())}`;
     }
+    
+    start() {
+        if(this.intervalId) {
+            return;
+        }
+    }
 }
