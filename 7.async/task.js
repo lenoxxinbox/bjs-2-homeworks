@@ -24,10 +24,16 @@ class AlarmClock {
         const currentDate = new Date();
         return `${String(currentDate.getHours())}:${String(currentDate.getMinutes())}`;
     }
-    
+
     start() {
-        if(this.intervalId) {
+        if (this.intervalId) {
             return;
         }
+        this.intervalId = setTimeout(() => this.alarmCollection.forEach(alarm => {
+            if (alarm.time === this.getCurrentFormattedTime()) {
+                alarm.canCall = false;
+                alarm.callback();
+            }
+        }), 1000);
     }
 }
