@@ -22,7 +22,7 @@ class AlarmClock {
 
     getCurrentFormattedTime() {
         const currentDate = new Date();
-        return `${String(currentDate.getHours())}:${String(currentDate.getMinutes())}`;
+        return `${currentDate.getHours()}:${currentDate.getMinutes()}`;
     }
 
     start() {
