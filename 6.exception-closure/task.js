@@ -2,10 +2,7 @@
 
 function parseCount(parsedValue) {
     const newValue = parseFloat(parsedValue);
-    if (isNaN(newValue)) {
-        const error = new Error("Невалидное значение");
-        throw error;
-    }
+    if (isNaN(newValue)) throw new Error("Невалидное значение");
     return newValue;
 }
 
