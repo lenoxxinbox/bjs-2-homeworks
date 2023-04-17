@@ -18,13 +18,10 @@ function cachingDecoratorNew(func) {
         if (cache.length > 5) {
             cache.shift();
         }
-
         return "Вычисляем: " + result;
     }
-
     return wrapper;
 }
-
 
 // //Задача № 2
 
@@ -39,14 +36,11 @@ function debounceDecoratorNew(func, delay) {
             func(...args);
             count++;
             isThrottled = true;
-            setTimeout(() => {
-                isThrottled = false;
-            }, delay);
+            setTimeout(() => isThrottled = false, delay);
         }
         wrapper.count = count;
         wrapper.allCount = allCount;
     }
-
     wrapper.count = count;
     wrapper.allCount = allCount;
 
